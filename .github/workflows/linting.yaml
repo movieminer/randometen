@@ -8,6 +8,9 @@ jobs:
   lint:
     name: "Linting"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
     steps:
 
       - name: "Checkout the repository"
@@ -17,10 +20,6 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: '3.8'
-
-      - name: "Move to backend directory"
-        run: |
-          cd backend
 
       - name: "Install Poetry"
         run: |
