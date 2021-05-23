@@ -20,6 +20,9 @@ jobs:
       - name: "Login to GitHub Packages"
         run: "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login https://docker.pkg.github.com --username ${{ github.repository_owner }} --password-stdin"
 
+      - name: "Move to backend directory"
+        run: "cd backend"
+
       - name: "Build Docker image"
         run: "docker build --build-arg commit_hash=\"${{ github.sha }}\" --tag \"${DOCKER_IMAGE}\" ."
 

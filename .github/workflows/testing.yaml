@@ -18,6 +18,10 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: "Move to backend directory"
+        run: |
+          cd backend
+
       - name: "Install Poetry"
         run: |
           python -m pip install --upgrade pip

@@ -18,6 +18,10 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: "Move to backend directory"
+        run: |
+          cd backend
+
       - name: "Install Poetry"
         run: |
           python -m pip install --upgrade pip
@@ -36,15 +40,15 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: "Run Black"
-        run: poetry run black --quiet --check backend
+        run: poetry run black --quiet --check website
 
       - name: "Run flake8"
         run: >-
           poetry run
           flake8
-          --exclude="migrations,backend/drankspel/settings/*.py"
+          --exclude="migrations,website/drankspel/settings/*.py"
           --max-line-length=119
-          backend
+          website
 
       - name: "Run PyDocStyle"
         run: poetry run pydocstyle --explain --add-ignore=D100,D104 --match-dir='(?!migrations).*'
