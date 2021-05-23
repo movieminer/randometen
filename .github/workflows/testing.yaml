@@ -40,14 +40,14 @@ jobs:
 
       - name: "Test migrations"
         run: |
-          poetry run python backend/manage.py makemigrations --no-input --check --dry-run
+          poetry run python website/manage.py makemigrations --no-input --check --dry-run
 
       - name: "Perform Django self-check"
         run: |
-          poetry run python3 backend/manage.py check
+          poetry run python3 website/manage.py check
 
       - name: "Run Django tests using Coverage"
-        run: poetry run coverage run backend/manage.py test backend/
+        run: poetry run coverage run website/manage.py test website/
 
       - name: "Check Coverage report"
         run: poetry run coverage report

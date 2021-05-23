@@ -26,5 +26,3 @@ RUN apt-get update && \
 
 
 COPY website /drankspel/src/website/
-
-RUN echo "0 0 * * * www-data /drankspel/src/website/manage.py dataminimisation" >> /etc/crontab
