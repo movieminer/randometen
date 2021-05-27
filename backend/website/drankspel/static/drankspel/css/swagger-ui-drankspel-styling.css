@@ -1,5 +1,5 @@
 .swagger-ui .info .title small.version-stamp {
-    background-color: #34af99;
+    background-color: black;
 }
 
 .swagger-ui .topbar .download-url-wrapper .select-label select {
@@ -7,7 +7,7 @@
 }
 
 .swagger-ui .topbar {
-    background-color: #34af99;
+    background-color: black;
 }
 
 .swagger-ui .topbar img {
