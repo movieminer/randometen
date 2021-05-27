@@ -10,4 +10,4 @@ class DrinkingGameSerializer(serializers.ModelSerializer):
         """Meta class."""
 
         model = DrinkingGame
-        fields = ["name", "description", "items"]
+        fields = ["id", "name", "description", "items"]

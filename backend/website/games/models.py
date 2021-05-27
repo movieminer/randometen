@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 
 class Item(models.Model):
@@ -11,5 +12,8 @@ class DrinkingGame(models.Model):
     """Drinking Game model."""
 
     name = models.CharField(max_length=1024, help_text="The name of the drinking game.")
-    description = models.TextField(help_text="The description of how to play the drinking game.")
-    items = models.ManyToManyField(Item, help_text="The items needed to play this drinking game.")
+    description = HTMLField(help_text="The description of how to play the drinking game.")
+    items = models.ManyToManyField(Item, help_text="The items needed to play this drinking game.", blank=True)
+
+    def __str__(self):
+        return self.name

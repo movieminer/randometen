@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas" :width="width" :height="height" style="position: absolute; top: 0; left: 0"></canvas>
+  <canvas ref="canvas" :width="width" :height="height" style="position: fixed; top: 0; left: 0"></canvas>
 </template>
 <script>
 

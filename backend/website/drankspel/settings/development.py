@@ -20,6 +20,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*", "0.0.0.0"]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080"
+]
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
