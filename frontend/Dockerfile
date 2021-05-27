@@ -6,7 +6,6 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
 # Include the .env file for build-time environment variables
-COPY .env ./.env
 COPY . ./
 RUN yarn build
 
