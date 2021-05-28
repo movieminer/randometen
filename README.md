@@ -1,2 +1,56 @@
-# drankspel
-A random drinking game picker.
+# Random Drankspel
+
+This is the repository for the Random Drankspel generator. This application is designed to create a way to pick a random drinking game.
+
+## Getting Started
+
+This project is built using both [Django](https://github.com/django/django) for the backend and [VueJS](https://vuejs.org) for the frontend.
+
+### Setup backend
+
+0. Get at least [Python](https://www.python.org) 3.8 installed on your system.
+1. Clone this repository.
+2. If `pip3` is not installed on your system yet, execute `apt install python3-pip` on your system.
+3. Also make sure `python3-dev` is installed on your system, execute `apt install python3-dev`.
+4. Install Poetry by following the steps on [their website](https://python-poetry.org/docs/#installation). Make sure poetry is added to `PATH` before continuing.
+5. Make sure `poetry` uses your python 3 installation: `poetry env use python3`.
+6. Go to the `backend` directory.
+7. Run `poetry install` to install all dependencies.
+8. Run `poetry shell` to start a shell with the dependencies loaded. This command needs to be ran every time you open a new shell and want to run the development server.
+9. Run `cd website` to change directories to the `website` folder containing the project.
+10. Run `./manage.py migrate` to initialise the database and run all migrations.
+11. Run `./manage.py createsuperuser` to create an administrator that is able to access the backend interface later on. The password you set here will not be used as the openid server will be used for identification, be sure to set the super user to your science login name.
+12. Run `./manage.py runserver` to start the development server locally.
+
+Now your server is setup and running on `localhost:8000`. The administrator interface can be accessed by going to `localhost:8000/admin`.
+
+### Setup frontend
+
+1. Install the [Yarn](https://yarnpkg.com/) package manager
+2. Clone this repository
+3. Go to the `frontend`.
+4. Use `yarn install` to install the required packages
+5. Use `yarn serve` to serve the test server
+6. Note that you might need to setup a `.env` file in the root of the cloned repository. The `.env` file will need to look something like the following (for local development):
+
+```
+VUE_APP_BACKEND_URI=http://localhost:8000
+```
+
+## Docker container
+
+A `Dockerfile` is included in the respective folders of both the `backend` and `frontend` of the repository. For building the docker file, you can run `docker build -t [tag] .` in the respecitve folder of the docker you want to build. An example docker-compose file is added as ```docker-compose.yml.example```. Note that for running this docker-compose file, the `setup.sql` in `backend/database_init` should be configured as well. 
+
+### Setting environment variables for the frontend
+
+Normally, environment variables are included during build and can not be changed afterwards. This is a problem when building a docker container which can be applied to different scenarios (e.g. with different API servers). Due to this fact, environment variables can be either included during build with a `.env` file in the root directory or with docker environment variables afterwards. Using docker environment variables will overwrite the environment variables included during build.
+
+Environment variables that are available and should be overwritable by docker environment variables later should be included in the `docker.blueprint.env` file. Note that this file must use `'` for indicating strings and the format is as follows:
+```
+    '[NAME_OF_VARIABLE_IN_VUE]': '${NAME_OF_ENV_VARIABLE}'
+```
+Before starting the `nginx` process, the docker environment variables will be set under the `window.__env__` variable in the `index.html` file.
+
+### Using environment variables for the frontend
+
+To use environment variables that can be set during runtime (with docker environment variables), add the variable to the `docker.blueprint.env` file as explained above. Then use the `getEnvVar` function in `src/util/env.ts` for getting the value of an environment variable. This function will first check wether it is set in the `window.__env__` variable and will then look if it is an environment variable.
