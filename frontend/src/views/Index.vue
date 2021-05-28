@@ -187,6 +187,10 @@ export default class Index extends Vue {}
   text-align: match-parent;
 }
 
+.explanation-container a {
+  text-decoration: underline;
+}
+
 @keyframes jittery {
   5%,
   50% {
