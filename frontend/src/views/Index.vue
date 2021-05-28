@@ -52,7 +52,6 @@ import Game from "@/models/game.model";
   },
   mounted() {
     GamesApiService.getGames().then((result) => {
-      result = result.filter(res => res.name === "Floepen");
       this.games = result;
       this.loading = false;
     }).catch(() => {
