@@ -126,3 +126,15 @@ STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = "/media/"
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    "height": 500,
+    "menubar": "file edit view link format table",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+    "link anchor"
+}
