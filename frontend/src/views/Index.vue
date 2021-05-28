@@ -8,15 +8,15 @@
       <h1 class="text-4xl font-primary uppercase">Drinking Game</h1>
       <h2 class="mb-5 text-4xl font-primary uppercase">Picker</h2>
       <div>
-        <button class="jittery p-5 rounded-md font-bold" @click="start($event)">Pick a random game!</button>
+        <button class="jittery p-5 rounded-md font-bold bg-black text-white" @click="start($event)">Pick a random game!</button>
       </div>
     </div>
     <div v-else-if="currentGame !== null" class="bg-white xl:p-5 p-4 rounded-md pt-5 pb-5 mt-5 mb-5" style="width: 42rem">
       <h2 class="font-primary uppercase text-4xl" v-bind:class="{ 'text-center': !showExplanation }">{{ currentGame.name }}</h2>
       <div v-if="!showExplanation" class="underline cursor-pointer text-center" v-on:click="showExplanation = true;">show explanation</div>
-      <div v-else class="mt-3" v-html="currentGame.description"></div>
+      <div v-else class="mt-3 explanation-container" v-html="currentGame.description"></div>
       <div>
-        <button @click="dismiss" type="button" class="uppercase mt-3 w-full p-2 rounded-md text-center mx-auto block" v-bind:class="{ 'max-w-md': !showExplanation }">
+        <button @click="dismiss" type="button" class="uppercase mt-3 w-full p-2 rounded-md text-center mx-auto block bg-black text-white" v-bind:class="{ 'max-w-md': !showExplanation }">
           Dismiss
         </button>
       </div>
@@ -111,14 +111,38 @@ import Game from "@/models/game.model";
 export default class Index extends Vue {}
 </script>
 
-<style scoped>
-button {
-  background-color: black;
-  color: white;
-}
+<style>
 
 .jittery {
   animation: jittery 4s infinite;
+}
+
+.explanation-container h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.explanation-container h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.explanation-container h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+}
+
+.explanation-container h4, .explanation-container h5, .explanation-container h6 {
+  font-weight: bold;
+}
+
+.explanation-container p {
+  margin-bottom: 1rem;
 }
 
 @keyframes jittery {

@@ -8,8 +8,8 @@ class _GamesApiService {
     this._apiService = api;
   }
 
-  getGames(): Promise<[Game]> {
-    return this._apiService.get<[Game]>("/games/").then((result) => {
+  getGames(): Promise<Game[]> {
+    return this._apiService.get<Game[]>("/games/").then((result) => {
       return result.data;
     });
   }
