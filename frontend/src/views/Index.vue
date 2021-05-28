@@ -52,6 +52,7 @@ import Game from "@/models/game.model";
   },
   mounted() {
     GamesApiService.getGames().then((result) => {
+      result = result.filter(res => res.name === "Floepen");
       this.games = result;
       this.loading = false;
     }).catch(() => {
@@ -143,6 +144,25 @@ export default class Index extends Vue {}
 
 .explanation-container p {
   margin-bottom: 1rem;
+}
+
+.explanation-container ul, .explanation-container ol {
+  margin-bottom: 1rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
+  display: block;
+}
+
+.explanation-container ul li {
+  list-style-type: '\1F37A';
+}
+
+.explanation-container ul li, .explanation-container ol li {
+  display: list-item;
+  text-align: match-parent;
 }
 
 @keyframes jittery {

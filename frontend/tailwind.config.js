@@ -3,7 +3,7 @@ module.exports = {
     content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
     options: {
       safelist: {
-        deep: ["explanation-container"],
+        deep: [/explanation-container/],
       },
     },
   },
