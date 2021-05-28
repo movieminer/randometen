@@ -15,8 +15,13 @@ body {
     rgba(255, 229, 0, 1) 95%,
     rgba(255, 255, 255, 1) 99%
   );
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: calc(
+    100vw - env(safe-area-inset-right) - env(safe-area-inset-left)
+  );
+  min-height: calc(
+    100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top)
+  );
+  min-height: -webkit-fill-available;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
