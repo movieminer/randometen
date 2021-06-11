@@ -52,8 +52,8 @@ services:
             VIRTUAL_PROTO: 'uwsgi'
             GOOGLE_APPLICATION_CREDENTIALS: '/drankspel/credentials.google'
             GOOGLE_AGENT_NAME: '[INSERT GOOGLE AGENT NAME]'
-            GOOGLE_INTENT_TRAINING_PHRASE: 'Give me a random drinking game'
-            GOOGLE_INTENT_RESPONSE_PHRASE: 'Okay, here you go: {}'
+            GOOGLE_INTENT_TRIGGER: 'Give me a random drinking game'
+            GOOGLE_INTENT_RESPONSE: 'Okay, here you go: {}'
         
         networks:
         - backend-django-drankspel
