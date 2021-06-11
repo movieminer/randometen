@@ -138,3 +138,8 @@ TINYMCE_DEFAULT_CONFIG = {
     "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
     "link anchor"
 }
+
+GOOGLE_CREDENTIALS_FILE = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+GOOGLE_AGENT_NAME = os.environ.get("GOOGLE_AGENT_NAME")
+GOOGLE_INTENT_TRAINING_PHRASE = os.environ.get("GOOGLE_INTENT_TRIGGER")
+GOOGLE_INTENT_RESPONSE_PHRASE = os.environ.get("GOOGLE_INTENT_RESPONSE")
