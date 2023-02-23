@@ -29,8 +29,8 @@ export default {
         this.options
       );
       return Object.assign({
-        color: "rgba(255, 255, 255, 0.3)",
-        radius: 30,
+        color: "rgba(100, 200, 255, 0.3)",
+        radius: 80,
         density: 0.3,
         clearOffset: 0.8,
       }, optionsClone);

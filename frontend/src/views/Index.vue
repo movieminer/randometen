@@ -8,7 +8,7 @@
       <h1 class="text-4xl font-primary uppercase">Food</h1>
       <h2 class="mb-5 text-4xl font-primary uppercase">Picker</h2>
       <div>
-        <button class="jittery p-5 rounded-md font-bold bg-black text-white" @click="start($event)">Pick a random food!</button>
+        <button class="jittery p-5 rounded-md font-bold text-white buttoncolor" @click="start($event)">Pick a random food!</button>
       </div>
     </div>
     <div v-else-if="currentGame !== null" class="bg-white xl:p-5 p-4 rounded-md pt-5 pb-5 mt-5 mb-5" style="width: 42rem">
@@ -189,6 +189,10 @@ export default class Index extends Vue {}
 
 .explanation-container a {
   text-decoration: underline;
+}
+
+.buttoncolor {
+  background-color: indianred;
 }
 
 @keyframes jittery {
