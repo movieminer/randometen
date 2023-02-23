@@ -5,10 +5,10 @@
   </div>
   <div class="flex justify-center items-center min-h-screen w-screen flex-row p-2 xl:p-10" v-on:click="clickedScreen($event)">
     <div v-if="!playing && currentGame === null" class="p-10 mx-auto text-center">
-      <h1 class="text-4xl font-primary uppercase">Drinking Game</h1>
+      <h1 class="text-4xl font-primary uppercase">Food</h1>
       <h2 class="mb-5 text-4xl font-primary uppercase">Picker</h2>
       <div>
-        <button class="jittery p-5 rounded-md font-bold bg-black text-white" @click="start($event)">Pick a random game!</button>
+        <button class="jittery p-5 rounded-md font-bold bg-black text-white" @click="start($event)">Pick a random food!</button>
       </div>
     </div>
     <div v-else-if="currentGame !== null" class="bg-white xl:p-5 p-4 rounded-md pt-5 pb-5 mt-5 mb-5" style="width: 42rem">
@@ -47,7 +47,7 @@ import Game from "@/models/game.model";
       currentGameIndex: null,
       intervalId: null,
       currentGame: null,
-      showExplanation: false,
+      showExplanation: true,
     }
   },
   components: {
