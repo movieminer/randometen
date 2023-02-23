@@ -47,7 +47,7 @@ import Game from "@/models/game.model";
       currentGameIndex: null,
       intervalId: null,
       currentGame: null,
-      showExplanation: true,
+      showExplanation: false,
     }
   },
   components: {
