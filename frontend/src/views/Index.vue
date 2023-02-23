@@ -102,7 +102,7 @@ import Game from "@/models/game.model";
     startWheel() {
       this.games = shuffle(this.games);
       this.currentGameIndex = 0;
-      this.intervalId = window.setInterval(this.nextGame, 250);
+      this.intervalId = window.setInterval(this.nextGame, 50);
     },
     stopWheel() {
       clearInterval(this.intervalId);
