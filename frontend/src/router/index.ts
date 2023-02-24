@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Index from "../views/Index.vue";
+import Triavium from "../views/Triavium.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
     component: Index,
+  },
+  {
+    path: "/triavium",
+    name: "Triavium",
+    component: Triavium,
   },
 ];
 

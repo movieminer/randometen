@@ -26,7 +26,7 @@
     </div>
   </div>
   <footer v-if="!playing && currentGame === null" class="fixed bottom-0 my-2 w-full block flex justify-center">
-    <a href="https://github.com/KiOui/drankspel" class="underline opacity-80 mx-auto text-black">Check the source code on GitHub</a>
+    <a href="https://github.com/movieminer/randometen" class="underline opacity-80 mx-auto text-black">Check the source code on GitHub</a>
   </footer>
 </template>
 
