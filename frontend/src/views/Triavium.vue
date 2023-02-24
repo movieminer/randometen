@@ -38,7 +38,7 @@
   import Game from "@/models/game.model";
   
   @Options({
-    name: "Index",
+    name: "Triavium",
     data () {
       return {
         games: [],
@@ -114,7 +114,7 @@
       }
     }
   })
-  export default class Index extends Vue {}
+  export default class Triavium extends Vue {}
   </script>
   
   <style>
